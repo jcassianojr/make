@@ -161,3 +161,7 @@ pacman -S --noconfirm --needed \
 
 # Limpa o cache de pacotes baixados para reduzir o tamanho da pasta do MSYS2[cite: 1]
 pacman -Sc --noconfirm
+
+
+pacman -S mingw-w64-x86_64-pcre2    # Para 64-bit (MinGW-w64)
+pacman -S mingw-w64-i686-pcre2     # Para 32-bit (MinGW-w64)
