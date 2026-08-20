@@ -165,3 +165,7 @@ pacman -Sc --noconfirm
 
 pacman -S mingw-w64-x86_64-pcre2    # Para 64-bit (MinGW-w64)
 pacman -S mingw-w64-i686-pcre2     # Para 32-bit (MinGW-w64)
+
+pacman -S mingw-w64-ucrt-x86_64-sqlite3
+pacman -S mingw-w64-x86_64-sqlite3
+pacman -S mingw-w64-i686-sqlite3
