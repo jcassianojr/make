@@ -79,6 +79,7 @@ pacman -S --noconfirm --needed \
     mingw-w64-x86_64-libmariadbclient \
     mingw-w64-x86_64-mariadb-connector-c \
     mingw-w64-x86_64-mongo-c-driver \
+    mingw-w64-x86_64-libmongocrypt \
     mingw-w64-x86_64-postgresql \
     mingw-w64-x86_64-sqlite3
 
@@ -169,3 +170,9 @@ pacman -S mingw-w64-i686-pcre2     # Para 32-bit (MinGW-w64)
 pacman -S mingw-w64-ucrt-x86_64-sqlite3
 pacman -S mingw-w64-x86_64-sqlite3
 pacman -S mingw-w64-i686-sqlite3
+
+
+pacman -S mingw-w64-i686-minizip
+pacman -S mingw-w64-i686-zlib
+pacman -S mingw-w64-x86_64-zlib
+pacman -S mingw-w64-x86_64-minizip
