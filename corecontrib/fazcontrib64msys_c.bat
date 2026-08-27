@@ -39,8 +39,8 @@ set CC=ccache gcc
 set CXX=ccache g++
 
 cd contrib
-hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtalleg\gtalleg @hbpost
-hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtqtc\gtqtc @hbpost
+rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtalleg\gtalleg @hbpost
+rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtqtc\gtqtc @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtwvg\gtwvg @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbamf\hbamf @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbblat\hbblat @hbpost
