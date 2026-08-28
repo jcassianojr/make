@@ -176,3 +176,4 @@ pacman -S mingw-w64-i686-minizip
 pacman -S mingw-w64-i686-zlib
 pacman -S mingw-w64-x86_64-zlib
 pacman -S mingw-w64-x86_64-minizip
+pacman -S mingw-w64-ucrt-x86_64-minizip
