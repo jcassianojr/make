@@ -6,33 +6,11 @@ REM mingw-w64-i686-icu
 REM mingw-w64-i686-libgd
 rem install do ads
 SET HB_WITH_ADS=c:\harbour\hb3rd\acesdk\
-rem pack mysys mingw-w64-i686-curl
-rem SET HB_WITH_CURL=c:\harbour\hb3rd\curl\include\
-rem erro parando compilacao
 set HB_WITH_FIREBIRD=c:\harbour\hb3rd\firebird\include\
-rem mingw-w64-i686-freeimage
-REM SET HB_WITH_FREEIMAGE=c:\harbour\hb3rd\FreeImage\include\
-rem pack mysys mingw-w64-i686-ghostscript
-rem set HB_WITH_GS=c:\harbour\hb3rd\gscript\include\ghostscript\
-rem junto com srddpp
 set HB_WITH_MYSQL=c:\harbour\hb3rd\mysql\include\
-rem implantar oci oracle posteriromente
 set HB_WITH_OCIlib=c:\harbour\hb3rd\oci\include\
-rem pack mysys mingw-w64-i686-openssl
-rem set HB_WITH_OPENSSL=c:\harbour\hb3rd\openssl\include\
-rem
 set HB_WITH_PGSQL=c:\harbour\hb3rd\pgsql\include\
-rem pack mysys mingw-w64-i686-libssh2
-rem SET HB_WITH_SSH2=c:\harbour\hb3rd\ssh2\include\
-rem mingw-w64-i686-rabbitmq-c
-REM SET HB_WITH_RABBITMQ=c:\harbour\hb3rd\RABBITMQ\include\
-rem pack mysys mingw-w64-i686-cairo
-rem set HB_WITH_CAIRO=c:\harbour\hb3rd\cairo\include\cairo\
-rem pack mysys mingw-w64-i686-libharu
-rem SET HB_WITH_LIBHARU=c:\harbour\hb3rd\libharu\include\
-rem
-rem SET HB_WITH_BLAT=c:\harbour\hb3rd\blat\
-
+SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
 
 set CC=ccache gcc
 set CXX=ccache g++

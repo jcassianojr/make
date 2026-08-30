@@ -26,6 +26,7 @@ SET HB_WITH_BZ2=d:\harbour\hb3rd\bzip2\include\
 SET HB_WITH_LIBXLSXWRITER=d:\harbour\hb3rd\libxlsxwriter\include\
 SET HB_WITH_YAML=d:\harbour\hb3rd\yaml\include\
 SET HB_WITH_SQLITE3=d:\harbour\hb3rd\sqlite\include\
+SET HB_WITH_MINIZIP=c:\harbour\hb3rd\minizip\include\
 
 
 SET HB_STATIC_CURL=yes
@@ -97,7 +98,8 @@ hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddfb\sddfb @hbpost
 rem hbmk2  -inc sddfb\sddfb 
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddoci\sddoci @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddodbc\sddodbc @hbpost
-hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddsqlt3\sddsqlt3 @hbpost
+SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
+hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddsqlt3\sddsqlt3 @hbpost -cflag="-DHB_SQLT3_MAP_DECLARED_EMULATED"
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc xhb\xhb  @hbpost
 
 rem extras
