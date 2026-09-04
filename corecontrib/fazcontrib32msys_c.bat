@@ -1,6 +1,5 @@
 @echo off
 SET HB_INSTALL_PREFIX=c:\hbcomp\hb32\
-
 SET HB_WITH_ADS=c:\harbour\hb3rd\acesdk\
 SET HB_WITH_ALLEGRO=c:\harbour\hb3rd\allegro\include\
 SET HB_WITH_BLAT=c:\harbour\hb3rd\blat\
@@ -15,11 +14,9 @@ set HB_WITH_OCIlib=c:\harbour\hb3rd\oci\include\
 set HB_WITH_OPENSSL=c:\harbour\hb3rd\openssl\include\
 SET HB_WITH_RABBITMQ=c:\harbour\hb3rd\RABBITMQ\include\
 SET HB_WITH_SSH2=c:\harbour\hb3rd\ssh2\include\
-rem vszakats
 SET HB_WITH_ICU=c:\harbour\hb3rd\icu\include\
 SET HB_WITH_AMQP=d:\harbour\hb3rd\amqp\include\
 SET HB_WITH_CRYPTO=d:\harbour\hb3rd\crypto\include\
-
 SET HB_WITH_EXPAT=d:\harbour\hb3rd\expat\include\
 SET HB_WITH_ZLIB=d:\harbour\hb3rd\zlib\include\
 SET HB_WITH_BZ2=d:\harbour\hb3rd\bzip2\include\
@@ -28,16 +25,13 @@ SET HB_WITH_YAML=d:\harbour\hb3rd\yaml\include\
 SET HB_WITH_SQLITE3=d:\harbour\hb3rd\sqlite\include\
 SET HB_WITH_MINIZIP=c:\harbour\hb3rd\minizip\include\
 
-
 SET HB_STATIC_CURL=yes
 SET HB_STATIC_OPENSSL=yes
 set HB_BUILD_CONTRIB_DYN=no
 set HB_BUILD_DYN=no
 set HB_BUILD_SHARED=no
 
-
 call hb32mysis_c.bat
-
 
 SET CC=ccache gcc
 SET CXX=ccache g++
@@ -46,7 +40,6 @@ cd contrib
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc gtalleg\gtalleg @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc gtqtc\gtqtc @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc gtwvg\gtwvg @hbpost
-rem hbmk2 -quiet -width=0 -autohbm- @hbpre -inc gtwvw\gtwvw @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbamf\hbamf @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbblat\hbblat @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbblink\hbblink @hbpost
@@ -59,17 +52,13 @@ hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbcurl\hbcurl @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbdoc\hbdoc @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbexpat\hbexpat @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbfbird\hbfbird @hbpost
-rem usando hmg rem hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbfimage\hbfimage @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbfoxpro\hbfoxpro @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbfship\hbfship @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbgd\hbgd  @hbpost
-rem hbmk2[hbgd]: Atenção: Faltando a dependência: gd
-rem hbmk2[hbgd]: Exit status: 10: dependência não encontrada ou desativada
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbgs\hbgs @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbgt\hbgt @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbgzio\hbgzio @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbhpdf\hbhpdf @hbpost
-rem hbmk2[hbhpdf]: Atenção: Não foram encontrados fontes para biblioteca de importação.
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbhttpd\hbhttpd @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbmagic\hbmagic @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbmemio\hbmemio @hbpost
@@ -89,17 +78,13 @@ hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbwin\hbwin @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbxpp\hbxpp @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbyaml\hbyaml @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbzebra\hbzebra @hbpost
-rem usando hmg rem hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbziparc\hbziparc @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc rddads\rddads @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc rddbm\rddbm @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc rddmisc\rddmisc @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc rddsql\rddsql @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddfb\sddfb @hbpost
-rem hbmk2  -inc sddfb\sddfb 
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddoci\sddoci @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddodbc\sddodbc @hbpost
-SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
-hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddsqlt3\sddsqlt3 @hbpost -cflag="-DHB_SQLT3_MAP_DECLARED_EMULATED"
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc xhb\xhb  @hbpost
 
 rem extras
@@ -109,44 +94,23 @@ hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbvpdf\hbvpdf @hbpost
 
 rem zslask
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbamqp\hbamqp  @hbpost
-rem hbmk2[hbamqp]: Erro: Faltou a dependência: rabbitmq
-rem hbmk2[hbamqp]: Exit status: 10: dependência não encontrada ou desativada
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbcrypto\hbcrypto @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbicu\hbicu @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbyaml\hbyaml @hbpost
 
-rem outros compilado individualmente quando a atualizacao .bat 32 64 na pasta addons
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sefazclass\sefazclass.hbp @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sefazclass_produto_core\sefazclass_produto_core.hbp @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sqlrddpp\sqlrddpp.hbp  @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sqlite3facade\sqlite3facade.hbp  @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  esocial\esocial.hbp  @hbpost
-
-rem sem uso zipados em addons
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  superlib\superlib
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gas4harbour\gas4harbour 
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  wvwclip\wvwclip
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  cacherdd\cacherdd
 
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hblibxlsxwriter\hblibxlsxwriter
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbxlsxwriter\hbxlsxwriter
 
-rem configuracao para o tdbclass abaixo para a libs
-rem set HB_WITH_MYSQL=c:\harbour\hb3rd\mysql\include\
-rem set HB_WITH_PGSQL=c:\harbour\hb3rd\pgsql\include\
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  tdbclass\Tdbclass @hbpost
-
-rem em desenvolvimento no repo
-rem warnings de compilacao
-rem SET HB_WITH_ADS=c:\harbour\hb3rd\aceopenads\
-rem hbmk2 -quiet -width=0 -autohbm- @hbpre -inc rddadsopen\rddadsopen.hbp @hbpost
+rem === sddsql3 ===
+SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
+hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddsqlt3\sddsqlt3 @hbpost -cflag="-DHB_SQLT3_MAP_DECLARED_EMULATED"
 
 rem === mysql ===
 Set HB_STATIC_MYSQL=yes
 set HB_USER_LDFLAGS=-static -static-libgcc -static-libstdc++
 set HB_WITH_MYSQL=c:\harbour\hb3rd\mysql\include\
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddmy\sddmy @hbpost
-rem usando hmg rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbmysql\hbmysql @hbpost
 
 rem ===  pgsql ===
 set HB_STATIC_PGSQL=no
@@ -155,11 +119,9 @@ set HB_USER_LDFLAGS=-static -static-libgcc -lintl -liconv -lws2_32 -lsecur32
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbpgsql\hbpgsql @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddpg\sddpg @hbpost
 
-
 rem === FIREBIRD ===
 set HB_STATIC_FBIRD=no
 set HB_WITH_FIREBIRD=C:\harbour\hb3rd\firebird\include\
 set HB_USER_LDFLAGS=-static-libgcc -static-libstdc++
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc hbfbird\hbfbird @hbpost
 hbmk2 -quiet -width=0 -autohbm- @hbpre -inc sddfb\sddfb @hbpost
-

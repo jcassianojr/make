@@ -15,7 +15,6 @@ SET HB_WITH_RABBITMQ=c:\harbour\hb3rd\RABBITMQ-x64\include\
 SET HB_WITH_SSH2=c:\harbour\hb3rd\ssh2-x64\include\
 set HB_WITH_OCIlib=c:\harbour\hb3rd\oci-x64\include\
 SET HB_WITH_GD=c:\harbour\hb3rd\gd-X64\include\
-rem vszakats
 SET HB_WITH_ICU=c:\harbour\hb3rd\icu-x64\include\
 SET HB_WITH_AMQP=c:\harbour\hb3rd\amqp-x64\include\
 SET HB_WITH_CRYPTO=c:\harbour\hb3rd\crypto-x64\include\
@@ -40,8 +39,6 @@ set CC=ccache gcc
 set CXX=ccache g++
 
 cd contrib
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtalleg\gtalleg @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtqtc\gtqtc @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gtwvg\gtwvg @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbamf\hbamf @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbblat\hbblat @hbpost
@@ -54,17 +51,13 @@ hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbct\hbct @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbcurl\hbcurl @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbdoc\hbdoc @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbexpat\hbexpat @hbpost
-rem usando hmg rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbfimage\hbfimage @hbpost
-rem hbmk2[hbfimage]: Warning: No import library sources were found.
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbfoxpro\hbfoxpro @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbfship\hbfship @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbgd\hbgd  @hbpost
-rem hbmk2[hbgd]: Warning: No import library sources were found.
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbgs\hbgs @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbgt\hbgt @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbgzio\hbgzio @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbhpdf\hbhpdf @hbpost
-rem hbmk2[hbhpdf]: Warning: No import library sources were found.
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbhttpd\hbhttpd @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbmagic\hbmagic @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbmemio\hbmemio @hbpost
@@ -84,15 +77,12 @@ hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbwin\hbwin @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbxpp\hbxpp @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbyaml\hbyaml @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbzebra\hbzebra @hbpost
-rem usando hmg rem  hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbziparc\hbziparc @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddads\rddads @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddbm\rddbm @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddmisc\rddmisc @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddsql\rddsql @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddoci\sddoci @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddodbc\sddodbc @hbpost
-SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
-hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddsqlt3\sddsqlt3 @hbpost -cflag="-DHB_SQLT3_MAP_DECLARED_EMULATED"
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  xhb\xhb @hbpost
 rem extras
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddado\rddado @hbpost
@@ -104,39 +94,20 @@ hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbcrypto\hbcrypto @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbicu\hbicu  @hbpost
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbyaml\hbyaml @hbpost
 
-rem outros compilado individualmente quando a atualizacao .bat 32 64 na pasta
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sefazclass\sefazclass.hbp @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sqlite3facade\sqlite3facade.hbp  @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  esocial\esocial.hbp  @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sefazclass_produto_core\sefazclass_produto_core.hbp @hbpost
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sqlrddpp\sqlrddpp.hbp  @hbpost
-
-rem sem uso zipados em addons
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  superlib\superlib.hbp
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  gas4harbour\gas4harbour.hbp 
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  wvwclip\wvwclip.hbp
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  cacherdd\cacherdd.hbp
 
 rem liblib
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hblibxlsxwriter\hblibxlsxwriter.hbp
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbxlsxwriter\hbxlsxwriter.hbp
 
-
-rem configuracao para o tdbclass abaixo para a libs
-rem set HB_WITH_MYSQL=c:\harbour\hb3rd\mysql-x64\include\
-rem set HB_WITH_PGSQL=c:\harbour\hb3rd\pgsql-x64\include\
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  tdbclass\Tdbclass.hbp @hbpost
-
-rem em desenvolvimento no repo
-rem SET HB_WITH_ADS=c:\harbour\hb3rd\aceopenads-x64\
-rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  rddadsopen\rddadsopen.hbp  @hbpost
+rem  === sddsql3  === 
+SET HB_USER_CFLAGS=-DHB_SQLT3_MAP_DECLARED_EMULATED
+hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddsqlt3\sddsqlt3 @hbpost -cflag="-DHB_SQLT3_MAP_DECLARED_EMULATED"
 
 rem  === mysql  === 
 Set HB_STATIC_MYSQL=no
 set HB_USER_LDFLAGS=-static-libgcc -static-libstdc++
 set HB_WITH_MYSQL=c:\harbour\hb3rd\mysql-x64\include\
 hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  sddmy\sddmy.hbp @hbpost
-rem usando hmg rem hbmk2 -quiet  -width=0 -autohbm- @hbpre -inc  hbmysql\hbmysql.hbp @hbpost
 
 
 set HB_PLATFORM=win
