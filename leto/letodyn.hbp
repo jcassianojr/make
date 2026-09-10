@@ -4,15 +4,12 @@
 
 #-env:__BM=yes
 
-# static lib
--hblib
+# shared lib, dll or so
+-hbdyn
+-shared
 
 -inc
-#-olib/leto
--olib/${hb_plat}/${hb_comp}/${hb_name}
-
--hbx=${hb_name}.hbx
-
+-olib/letocl
 -iinclude
 -n -w -q0 -es2
 

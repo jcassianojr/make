@@ -1,0 +1,64 @@
+#-env:__BM=yes
+-env:__LZ4=yes
+-env:__PMURHASH=yes
+
+#-olib/rddleto
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+# static lib
+-hblib
+
+# shared lib: .dll or .so -- outcomment above, remove '#' in next 2 lines
+#-hbdynvm
+#-shared
+
+
+-n
+-w3
+-q0
+-es2
+-gc3
+-strip
+-rebuild
+-inc-
+-hbx=rddletoelch.hbx
+
+-iinclude
+{__LZ4}-isource/3rd/lz4/lib
+
+#-cflag=-D__HARBOUR30__=1
+
+# remove '#' for special actions to fix concurrency with a Samba server
+#-cflag=-DLETO_SMBSERVER=1
+
+# next two lines to force single threaded communication with a single socket
+#-cflag=-DLETO_NO_THREAD=1
+#-prgflag=-DLETO_NO_THREAD=1
+
+# CPP flags to pacify 'modern' new C-compiler
+#-cflag=-Wno-c++11-long-long
+#-cflag=-Wno-old-style-cast
+
+-cflag={allmsvc}-D_CRT_SECURE_NO_DEPRECATE
+-cflag={clang}-W
+-cflag={clang}-Wall
+-cflag={clang}-pedantic
+# to avoid spin locks
+#-cflag={win}-DHB_HELGRIND_FRIENDLY=1
+{__PMURHASH}-cflag=-DUSE_PMURHASH=1
+{__BM}-cflag=-D__BM=1
+{__LZ4}-cflag=-DUSE_LZ4=1
+
+source/client/letocl.c
+source/client/leto1.c
+source/client/letomgmn.c
+source/client/rddsys.prg
+{__BM}source/client/letobmcl.prg
+
+source/common/blowfish.c
+source/common/common_c.c
+{__LZ4}source/3rd/lz4/lib/lz4.c
+{__LZ4}source/common/lz4net.c
+{__PMURHASH}source/common/PMurHash.c
+
+$hb_pkg_install.hbm

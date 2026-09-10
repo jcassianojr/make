@@ -46,4 +46,4 @@ source/common/common_c.c
 source/common/common.prg
 {__BM}source/common/letoserv.prg
 
-$hb_pkg_install.hbm
+#$hb_pkg_install.hbm
