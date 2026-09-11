@@ -1,6 +1,8 @@
 call d:\devprg\hb64\hb64msys.bat
 call c:\devprg\hb64\hb64msys_C.bat
 REM SET HB_INSTALL_PREFIX=c:\harbour\LetoDBf\hb64\
+SET CC=ccache gcc
+SET CXX=ccache g++
 hbmk2 leto.hbp
 hbmk2 letodb.hbp
 hbmk2 letodyn.hbp
