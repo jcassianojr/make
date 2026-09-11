@@ -1,6 +1,7 @@
 #-env:__BM=yes
 -env:__LZ4=yes
 -env:__PMURHASH=yes
+-inc
 
 #-olib/rddleto
 -olib/${hb_plat}/${hb_comp}/${hb_name}
@@ -20,7 +21,6 @@
 -gc3
 -strip
 -rebuild
--inc-
 -hbx=rddletoelch.hbx
 
 -iinclude
