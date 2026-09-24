@@ -1,0 +1,63 @@
+
+//incluir
+static HB_ERRCODE sqlbaseLock( AREAP pArea, DBLOCKINFO * pLockInfo )
+{
+HB_SYMBOL_UNUSED( pArea );
+if( pLockInfo )
+{
+pLockInfo->fResult = HB_TRUE;
+}
+return HB_SUCCESS;
+}
+
+static HB_ERRCODE sqlbaseUnLock( AREAP pArea, void * pRef )
+{
+HB_SYMBOL_UNUSED( pArea );
+HB_SYMBOL_UNUSED( pRef );
+return HB_SUCCESS;
+}
+
+And further down, I changed:
+( DBENTRYP_I ) NULL,              /* sqlbaseLock */
+( DBENTRYP_I ) NULL,              /* sqlbaseUnLock */
+to
+sqlbaseLock,                     /* sqlbaseLock */
+sqlbaseUnLock,                   /* sqlbaseUnLock */
+
+ //  ( DBENTRYP_VL ) NULL,             /* sqlbaseLock */
+ //  ( DBENTRYP_I ) NULL,              /* sqlbaseUnLock */
+   ( DBENTRYP_VL ) sqlbaseLock,             /* sqlbaseLock */
+   ( DBENTRYP_I ) sqlbaseUnLock,              /* sqlbaseUnLock */
+
+
+Changes in the `sqlmix.c` file:
+I added the following below the `static HB_ERRCODE sqlmixClose` function:
+...
+static HB_ERRCODE sqlmixLock( AREAP pArea, DBLOCKINFO * pLockInfo )
+{
+HB_SYMBOL_UNUSED( pArea );
+if( pLockInfo )
+{
+pLockInfo->fResult = HB_TRUE;
+}
+return HB_SUCCESS;
+}
+
+static HB_ERRCODE sqlmixUnLock( AREAP pArea, void * pRef )
+{
+HB_SYMBOL_UNUSED( pArea );
+HB_SYMBOL_UNUSED( pRef );
+return HB_SUCCESS;
+}
+
+And the same change further down:
+( DBENTRYP_I ) NULL,              /* sqlbaseLock */
+( DBENTRYP_I ) NULL,              /* sqlbaseUnLock */
+to
+sqlbaseLock,                     /* sqlbaseLock */
+sqlbaseUnLock,                   /* sqlbaseUnLock *
+
+//  ( DBENTRYP_VL ) NULL,                 /* sqlmixLock */
+//  ( DBENTRYP_I ) NULL,                  /* sqlmixUnLock */
+  ( DBENTRYP_VL ) sqlmixLock,                 /* sqlmixLock */
+  ( DBENTRYP_I ) sqlmixUnLock,                  /* sqlmixUnLock */
