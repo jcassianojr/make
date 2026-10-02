@@ -1,4 +1,7 @@
 SET HB_WITH_OPENSSL=c:\harbour\hb3rd\openssl_v4-x64\include\
 call d:\DEVPRG\hb64\hb64msys.bat
 call c:\DEVPRG\hb64\hb64msys_c.bat
+set CC=ccache gcc
+set CXX=ccache g++
+
 hbmk2.exe hbssl.hbp
