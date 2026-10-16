@@ -1,0 +1,23 @@
+-hblib
+-inc
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+#-w3 -es2
+
+# 1. Define uma chave de dependência para o UnRAR
+-depkeyhead=unrar:unrar.h
+-depcontrol=unrar:${WHIT_UNRAR_DLL}
+
+# 2. Mapeia a biblioteca de importação conforme a arquitetura
+{x86_64}-depimplibs=unrar:${WHIT_UNRAR_DLL}/UnRAR64.lib
+{x86}-depimplibs=unrar:${WHIT_UNRAR_DLL}/UnRAR.lib
+
+# Arquivos fonte
+hb_unrar.c
+unrar.prg
+
+-hbx=${hb_name}.hbx
+
+# Header do unrar
+-cflag+=-I${WHIT_UNRAR_DLL}
+
+$hb_pkg_install.hbm

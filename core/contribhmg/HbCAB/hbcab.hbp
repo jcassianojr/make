@@ -1,0 +1,18 @@
+#
+# hbcab.hbp
+#
+
+-hblib
+-inc
+
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+-I./;../../include
+
+-warn=max
+
+${hb_name}.hbx
+
+cabinet.c
+compress.c
+decompress.c

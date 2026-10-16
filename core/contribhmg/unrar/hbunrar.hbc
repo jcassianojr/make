@@ -1,0 +1,7 @@
+description=Biblioteca de suporte ao UnRAR
+libpaths=${WHIT_UNRAR_DLL}
+
+# Se for Windows, vincula a DLL correta automaticamente
+{win&x86}libs=unrar
+{win&x86_64}libs=unrar64
+

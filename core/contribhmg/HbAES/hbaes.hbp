@@ -1,0 +1,20 @@
+#
+# hbaes.hbp
+#
+
+-hblib
+-inc
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+-I../../include;./include
+
+-w2 -es2 -ko -q0
+
+-hbx=hbaes.hbx
+
+aescrypt.prg
+padlock.c 
+aes.c 
+sha2.c 
+aescrypt2.c
+

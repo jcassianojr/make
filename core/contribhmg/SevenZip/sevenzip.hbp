@@ -1,0 +1,21 @@
+# --- Configurações de Build ---
+-hblib
+-inc
+
+# Define o diretório de saída baseado na arquitetura (ex: lib32 ou lib64)
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+
+#hbx
+#-hbx=-olib/${hb_plat}/${hb_comp}/sevenzip.hbx
+{!xhb}-hbx=sevenzip.hbx
+{!xhb}sevenzip.hbx
+
+
+# Arquivos de projeto
+hbsqlit3.hbc
+
+t7zip.prg
+sevenzip.c
+
+$hb_pkg_install.hbm
