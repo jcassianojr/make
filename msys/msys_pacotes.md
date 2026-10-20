@@ -182,3 +182,6 @@ pacman -S mingw-w64-ucrt-x86_64-minizip
 pacman -S mingw-w64-ucrt-x86_64-libarchive
 pacman -S mingw-w64-x86_64-libarchive
 pacman -S mingw-w64-i686-libarchive
+
+
+pacman -S autoconf automake libtool make mingw-w64-x86_64-gcc
