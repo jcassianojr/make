@@ -8,7 +8,7 @@ pacman -Syu --noconfirm
 pacman -Su --noconfirm
 
 # Ferramentas essenciais globais de build e controle de versão do MSYS
-pacman -S --noconfirm --needed git bison make ccache ninja intltool perl perl-XML-Parser
+pacman -S --noconfirm --needed autoconf automake bison ccache git intltool libtool make ninja perl perl-XML-Parser
 
 
 # =============================================================================
@@ -30,7 +30,7 @@ pacman -S --noconfirm --needed \
     mingw-w64-i686-firebird2 \
     mingw-w64-i686-mariadb-connector-c \
     mingw-w64-i686-postgresql \
-    mingw-w64-i686-sqlite3
+    mingw-w64-i686-sqlite
 
 # [C] Gráficos, Interface e Documentos
 pacman -S --noconfirm --needed \
@@ -48,12 +48,15 @@ pacman -S --noconfirm --needed \
     mingw-w64-i686-curl \
     mingw-w64-i686-expat \
     mingw-w64-i686-icu \
+    mingw-w64-i686-libarchive \
     mingw-w64-i686-libharu \
     mingw-w64-i686-liblzf \
     mingw-w64-i686-libssh2 \
     mingw-w64-i686-libxlsxwriter \
     mingw-w64-i686-libyaml \
+    mingw-w64-i686-minizip \
     mingw-w64-i686-openssl \
+    mingw-w64-i686-pcre2 \
     mingw-w64-i686-rabbitmq-c \
     mingw-w64-i686-unrar \
     mingw-w64-i686-zlib
@@ -81,7 +84,7 @@ pacman -S --noconfirm --needed \
     mingw-w64-x86_64-mongo-c-driver \
     mingw-w64-x86_64-libmongocrypt \
     mingw-w64-x86_64-postgresql \
-    mingw-w64-x86_64-sqlite3
+    mingw-w64-x86_64-sqlite
 
 # [C] Gráficos, Interface e Documentos
 pacman -S --noconfirm --needed \
@@ -100,12 +103,15 @@ pacman -S --noconfirm --needed \
     mingw-w64-x86_64-curl \
     mingw-w64-x86_64-expat \
     mingw-w64-x86_64-icu \
+    mingw-w64-x86_64-libarchive \
     mingw-w64-x86_64-libharu \
     mingw-w64-x86_64-liblzf \
     mingw-w64-x86_64-libssh2 \
     mingw-w64-x86_64-libxlsxwriter \
     mingw-w64-x86_64-libyaml \
+    mingw-w64-x86_64-minizip \
     mingw-w64-x86_64-openssl \
+    mingw-w64-x86_64-pcre2 \
     mingw-w64-x86_64-python-pip \
     mingw-w64-x86_64-python-pipx \
     mingw-w64-x86_64-rabbitmq-c \
@@ -128,7 +134,7 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     mingw-w64-ucrt-x86_64-mariadb-connector-c \
     mingw-w64-ucrt-x86_64-postgresql \
-    mingw-w64-ucrt-x86_64-sqlite3
+    mingw-w64-ucrt-x86_64-sqlite
 
 # [C] Gráficos, Interface e Documentos
 pacman -S --noconfirm --needed \
@@ -145,11 +151,13 @@ pacman -S --noconfirm --needed \
     mingw-w64-ucrt-x86_64-curl \
     mingw-w64-ucrt-x86_64-expat \
     mingw-w64-ucrt-x86_64-icu \
+    mingw-w64-ucrt-x86_64-libarchive \
     mingw-w64-ucrt-x86_64-libharu \
     mingw-w64-ucrt-x86_64-liblzf \
     mingw-w64-ucrt-x86_64-libssh2 \
     mingw-w64-ucrt-x86_64-libxlsxwriter \
     mingw-w64-ucrt-x86_64-libyaml \
+    mingw-w64-ucrt-x86_64-minizip \
     mingw-w64-ucrt-x86_64-openssl \
     mingw-w64-ucrt-x86_64-rabbitmq-c \
     mingw-w64-ucrt-x86_64-unrar \
@@ -160,28 +168,5 @@ pacman -S --noconfirm --needed \
 # LIMPEZA FINAL
 # =============================================================================
 
-# Limpa o cache de pacotes baixados para reduzir o tamanho da pasta do MSYS2[cite: 1]
+# Limpa o cache de pacotes baixados para reduzir o tamanho da pasta do MSYS2
 pacman -Sc --noconfirm
-
-
-pacman -S mingw-w64-x86_64-pcre2    # Para 64-bit (MinGW-w64)
-pacman -S mingw-w64-i686-pcre2     # Para 32-bit (MinGW-w64)
-
-pacman -S mingw-w64-ucrt-x86_64-sqlite3
-pacman -S mingw-w64-x86_64-sqlite3
-pacman -S mingw-w64-i686-sqlite3
-
-
-pacman -S mingw-w64-i686-minizip
-pacman -S mingw-w64-i686-zlib
-pacman -S mingw-w64-x86_64-zlib
-pacman -S mingw-w64-x86_64-minizip
-pacman -S mingw-w64-ucrt-x86_64-minizip
-
-
-pacman -S mingw-w64-ucrt-x86_64-libarchive
-pacman -S mingw-w64-x86_64-libarchive
-pacman -S mingw-w64-i686-libarchive
-
-
-pacman -S autoconf automake libtool make mingw-w64-x86_64-gcc
